@@ -1,0 +1,43 @@
+spring:
+  profiles:
+    active: dev
+---
+server:
+  port: 9527
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY #显示的名字，随便取
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true
+zuul:
+  routes:
+    aigouUser.serviceId: user-provider
+    aigouUser.path: /aigouUser/** #路由映射：/aigouUser/**这个路径的访问都路由到serverId服务处理
+  ignored-services: user-provider  #忽略这个application.name，通过它不能够请求到
+  prefix: "/aigou" #统一前缀
+---
+server:
+  port: 9528
+spring:
+  application:
+    name: MICROSERVICE-ZUUL-GATEWAY-TEST #显示的名字，随便取
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka
+  instance:
+    instance-id: gateway-9528.com
+    prefer-ip-address: true
+zuul:
+  routes:
+    aigouUser.serviceId: user-provider
+    aigouUser.path: /aigouUser/** #路由映射：/aigouUser/**这个路径的访问都路由到serverId服务处理
+  ignored-services: user-provider  #忽略这个application.name，通过它不能够请求到
+  prefix: "/aigou" #统一前缀
