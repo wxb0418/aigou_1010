@@ -8,6 +8,14 @@ spring:
   application:
     name: PRODUCT-PROVIDER
   profiles: dev
+  datasource:
+          driver-class-name: com.mysql.jdbc.Driver
+          url: jdbc:mysql://localhost:3306/aigou
+          username: root
+          password: 920801
+   mybatis-plus:
+        mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml
+        type-aliases-package: cn.itsource.domain,cn.itsource.query
 eureka:
   client:
     service-url:
@@ -21,6 +29,14 @@ spring:
   application:
     name: PRODUCT-PROVIDER-TEST
   profiles: test
+  datasource:
+            driver-class-name: com.mysql.jdbc.Driver
+            url: jdbc:mysql://localhost:3306/aigou
+            username: root
+            password: 920801
+  mybatis-plus:
+      mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml
+      type-aliases-package: cn.itsource.domain,cn.itsource.query
 eureka:
   client:
     service-url:
