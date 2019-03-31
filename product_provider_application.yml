@@ -15,7 +15,7 @@ spring:
           password: 920801
 mybatis-plus:
     mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml
-    type-aliases-package: cn.itsource.domain
+    type-aliases-package: cn.itsource.domain,cn.itsource.query
 eureka:
   client:
     service-url:
@@ -36,7 +36,7 @@ spring:
             password: 920801
 mybatis-plus:
     mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml
-    type-aliases-package: cn.itsource.domain
+    type-aliases-package: cn.itsource.domain,cn.itsource.query
 eureka:
   client:
     service-url:
