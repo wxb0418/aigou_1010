@@ -23,6 +23,9 @@ zuul:
   #产品服务的路由
     aigouProduct.serviceId: product-provider
     aigouProduct.path: /aigouProduct/**
+  #公共服务的路由
+    aigouCommon.serviceId: common-provider
+    aigouCommon.path: /aigouCommon/**
   ignored-services: user-provider  #忽略这个application.name，通过它不能够请求到
   prefix: "/aigou" #统一前缀
 ---
@@ -46,5 +49,8 @@ zuul:
     #产品服务的路由
     aigouProduct.serviceId: product-provider
     aigouProduct.path: /aigouProduct/**
+    #公共服务的路由
+    aigouCommon.serviceId: common-provider
+    aigouCommon.path: /aigouCommon/**
   ignored-services: user-provider  #忽略这个application.name，通过它不能够请求到
   prefix: "/aigou" #统一前缀
