@@ -17,13 +17,13 @@ eureka:
     prefer-ip-address: true
 zuul:
   routes:
-  #用户登录的路由
+    #用户登录的路由
     aigouUser.serviceId: user-provider
     aigouUser.path: /aigouUser/** #路由映射：/aigouUser/**这个路径的访问都路由到serverId服务处理
-  #产品服务的路由
+    #产品服务的路由
     aigouProduct.serviceId: product-provider
     aigouProduct.path: /aigouProduct/**
-  #公共服务的路由
+    #公共服务的路由
     aigouCommon.serviceId: common-provider
     aigouCommon.path: /aigouCommon/**
   ignored-services: user-provider  #忽略这个application.name，通过它不能够请求到
@@ -44,6 +44,7 @@ eureka:
     prefer-ip-address: true
 zuul:
   routes:
+    #用户登录的路由
     aigouUser.serviceId: user-provider
     aigouUser.path: /aigouUser/** #路由映射：/aigouUser/**这个路径的访问都路由到serverId服务处理
     #产品服务的路由
