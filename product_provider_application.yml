@@ -14,6 +14,7 @@ spring:
           username: root
           password: 920801
 mybatis-plus:
+    mapper-locations: classpath:cn/itsource/mapper/*Mapper.xml
     type-aliases-package: cn.itsource.domain,cn.itsource.query
 eureka:
   client:
